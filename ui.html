@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      padding: 16px;
+    }
+    
+    .slider-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-container">
+    <input type="range" id="hue-slider" min="0" max="360" value="0">
+    <span id="hue-value">0</span>
+  </div>
+
+  <script>
+    // Add an event listener to the slider input element
+    const slider = document.getElementById('hue-slider');
+    const hueValue = document.getElementById('hue-value');
+
+    slider.addEventListener('input', () => {
+      const hue = Math.round(slider.value);
+      hueValue.textContent = hue;
+      parent.postMessage({ pluginMessage: { type: 'adjustHue', hueValue: hue } }, '*');
+    });
+  </script>
+</body>
+</html>

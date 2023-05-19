@@ -1,0 +1,21 @@
+{
+  "name": "Hue-Change",
+  "version": "1.0.0",
+  "description": "Your Figma Plugin",
+  "main": "code.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "watch": "npm run build -- --watch"
+  },
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.64.0",
+    "@types/figma": "^1.0.4",
+    "@types/node": "^20.2.1",
+    "typescript": "*"
+  },
+  "dependencies": {
+    "figma": "^0.0.1"
+  }
+}
